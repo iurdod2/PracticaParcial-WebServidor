@@ -1,0 +1,26 @@
+### Registrar un nuevo usuario
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Registrar otro usuario
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+  "email": "user2@example.com",
+  "password": "securepassword"
+}
+
+### Intentar registrar un usuario con un email ya existente
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
