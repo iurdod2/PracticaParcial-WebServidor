@@ -6,31 +6,78 @@ const UserScheme = new mongoose.Schema(
         unique: true
     },
     password:{
-        type: String // TODO Guardaremos el hash
+        type: String
     },
     role:{
-        type: ["user", "admin"], // es el enum de SQL
+        type: ["user", "admin"],
         default: "user"
     },
-    status:{
+    verified:{
         type: Boolean,
-        default: flase
+        default: false
     },
     verificationCode: {
         type: String,
-      },
+    },
     verificationAttempts: {
         type: Number,
         default: 0,
-      },
-      maxVerificationAttempts: {
+    },
+    maxVerificationAttempts: {
         type: Number,
-        default: 3, // Número máximo de intentos
-      },
+        default: 3,
+    },
+    // Datos personales
+    name: {
+        type: String,
+    },
+    surname: {
+        type: String,
+    },
+    nif: {
+        type: String,
+    },
+    // Datos de la compañía
+    companyName: {
+        type: String,
+    },
+    cif: {
+        type: String,
+    },
+    address: {
+        type: String,
+    },
+    city: {
+        type: String,
+    },
+    postalCode: {
+        type: String,
+    },
+    isAutonomo: {
+        type: Boolean,
+        default: false,
+    },
+    active: {
+      type: Boolean,
+      default: true
+    },
+    resetCode: {
+      type: String
+    },
+    resetCodeExpires: {
+      type: Date
+    },
+    invitationCode: {
+      type: String
+    },
+    invitedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'users'
+    },
  },
  {
-    timestamps: true, // TODO createdAt, updatedAt
+    timestamps: true,
     versionKey: false
  }
 )
-module.exports = mongoose.model("users", UserScheme) // "users" es el nombre de la colección en mongoDB (o de la tabla en SQL)
+module.exports = mongoose.model("users", UserScheme)

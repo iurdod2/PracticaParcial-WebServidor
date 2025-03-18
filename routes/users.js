@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {validatorCreateItem, validatorGetItem} = require('../validators/users');
-const {getUsers, getUser, createUser, updateUser, deleteUser, updateRole} = require('../controllers/users');
+const {getUsers, getUser, createUser, updateUser, deleteUser, updateRole, getMe, deleteAccount} = require('../controllers/users');
 
 //MIDDLEWARES
 const {checkRole} = require('../middleware/role');
@@ -14,6 +14,8 @@ router.post('/',validatorCreateItem, createUser);
 router.put('/:id', authMiddleware, updateUser);
 router.put('/role/:id', authMiddleware, checkRole(['admin']), updateRole);
 router.delete('/:id', deleteUser);
+router.get('/me', authMiddleware, getMe);
+router.delete('/account', authMiddleware, deleteAccount);
 
 
 module.exports = router;
