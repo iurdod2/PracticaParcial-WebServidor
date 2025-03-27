@@ -44,19 +44,19 @@ Content-Type: application/json
 }
 
 ### 2. VALIDACIÓN DE EMAIL
-### (Nota: Debes reemplazar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ con el token JWT recibido durante el registro)
+### (Nota: Debes reemplazar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8 con el token JWT recibido durante el registro)
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
-  "code": "874516"
+  "code": "732811"
 }
 
 ### 2.1 Validación con código incorrecto
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
   "code": "000000"
@@ -65,7 +65,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZ
 ### 2.2 Validación con código de formato incorrecto (menos de 6 dígitos)
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
   "code": "123"
@@ -145,7 +145,7 @@ Content-Type: application/json
 ### 4. ONBOARDING - DATOS PERSONALES
 PUT http://localhost:3000/api/onboarding/personal
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
   "name": "Juan",
@@ -156,7 +156,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZ
 ### 4.1 ONBOARDING - DATOS PERSONALES (formato incorrecto)
 PUT http://localhost:3000/api/onboarding/personal
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
   "name": "Juan",
@@ -178,20 +178,20 @@ Content-Type: image/jpeg
 
 ### Actualizar logo (PATCH)
 PATCH http://localhost:3000/api/storage/logo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 Content-Type: multipart/form-data; boundary=boundary123
 
 --boundary123
-Content-Disposition: form-data; name="image"; filename="fotoPrueba.jpg"
+Content-Disposition: form-data; name="image"; filename="fotoUpdate.jpg"
 Content-Type: image/jpeg
 
-< ./fotoPrueba.jpg
+< ./fotoUpdate.jpg
 --boundary123--
 
 ### 5. ONBOARDING - DATOS DE COMPAÑÍA (empresa)
 PATCH http://localhost:3000/api/onboarding/company
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
   "companyName": "Empresa XYZ",
@@ -205,7 +205,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZ
 ### 5.1 ONBOARDING - DATOS DE COMPAÑÍA (autónomo)
 PATCH http://localhost:3000/api/onboarding/company
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
   "address": "Calle Principal 123",
@@ -216,15 +216,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZ
 
 ### 6. GET USUARIO ACTUAL
 GET http://localhost:3000/api/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 ### 7. ELIMINAR CUENTA (SOFT DELETE)
 DELETE http://localhost:3000/api/users/account
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 ### 8. ELIMINAR CUENTA (HARD DELETE)
 DELETE http://localhost:3000/api/users/account?soft=false
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 ### 9. SOLICITAR RECUPERACIÓN DE CONTRASEÑA
 POST http://localhost:3000/api/recovery/request
@@ -247,7 +247,7 @@ Content-Type: application/json
 ### 11. INVITAR A UN COMPAÑERO
 POST http://localhost:3000/api/invitations/invite
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2U1MjYyNzBkYzkyYjM1MzI1NzFiMDEiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzMDcwNzU5LCJleHAiOjE3NDMwNzc5NTl9.qOPw0o8SPTAp6gGDm9q08u0-wScO5l6HSGNqOroj1g8
 
 {
   "email": "companero@example.com"

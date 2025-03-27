@@ -21,7 +21,7 @@ router.post('/memory',
 // Nueva ruta para actualizar el logo
 router.patch('/logo', 
     authMiddleware,
-    uploadMiddleware.single('logo'),
+    uploadMiddleware.single('image'),
     (req, res, next) => {
         if (!req.file) {
             return res.status(400).json({ error: "No se recibió ningún logo" });
