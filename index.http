@@ -1,4 +1,4 @@
-### 1. REGISTRO DE USUARIO
+### 1. Registro de usuario
 POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
@@ -44,19 +44,19 @@ Content-Type: application/json
 }
 
 ### 2. VALIDACIÓN DE EMAIL
-### (Nota: Debes reemplazar ¿token? con el token JWT recibido durante el registro)
+### (Nota: Debes reemplazar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ con el token JWT recibido durante el registro)
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
-  "code": "123456"
+  "code": "874516"
 }
 
 ### 2.1 Validación con código incorrecto
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
   "code": "000000"
@@ -65,7 +65,7 @@ Authorization: Bearer ¿token?
 ### 2.2 Validación con código de formato incorrecto (menos de 6 dígitos)
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
   "code": "123"
@@ -145,7 +145,7 @@ Content-Type: application/json
 ### 4. ONBOARDING - DATOS PERSONALES
 PUT http://localhost:3000/api/onboarding/personal
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
   "name": "Juan",
@@ -156,7 +156,7 @@ Authorization: Bearer ¿token?
 ### 4.1 ONBOARDING - DATOS PERSONALES (formato incorrecto)
 PUT http://localhost:3000/api/onboarding/personal
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
   "name": "Juan",
@@ -164,22 +164,34 @@ Authorization: Bearer ¿token?
   "nif": "12345Z"
 }
 
-### 5. Logo (PATCH)
-PATCH http://localhost:3000/api/storage/logo
-Authorization: Bearer ¿token?
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+### 5. Logo
+### Subir imagen desde almacenamiento local
+POST http://localhost:3000/api/storage/local
+Content-Type: multipart/form-data; boundary=boundary123
 
-------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="logo"; filename="NuevoFotoDePerfil.jpg"
+--boundary123
+Content-Disposition: form-data; name="image"; filename="fotoPrueba.jpg"
 Content-Type: image/jpeg
 
-< /storage/NuevoFotoDePerfil.jpg
-------WebKitFormBoundary7MA4YWxkTrZu0gW--
+< ./fotoPrueba.jpg
+--boundary123--
+
+### Actualizar logo (PATCH)
+PATCH http://localhost:3000/api/storage/logo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="fotoPrueba.jpg"
+Content-Type: image/jpeg
+
+< ./fotoPrueba.jpg
+--boundary123--
 
 ### 5. ONBOARDING - DATOS DE COMPAÑÍA (empresa)
 PATCH http://localhost:3000/api/onboarding/company
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
   "companyName": "Empresa XYZ",
@@ -193,7 +205,7 @@ Authorization: Bearer ¿token?
 ### 5.1 ONBOARDING - DATOS DE COMPAÑÍA (autónomo)
 PATCH http://localhost:3000/api/onboarding/company
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
   "address": "Calle Principal 123",
@@ -204,15 +216,15 @@ Authorization: Bearer ¿token?
 
 ### 6. GET USUARIO ACTUAL
 GET http://localhost:3000/api/users/me
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 ### 7. ELIMINAR CUENTA (SOFT DELETE)
 DELETE http://localhost:3000/api/users/account
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 ### 8. ELIMINAR CUENTA (HARD DELETE)
 DELETE http://localhost:3000/api/users/account?soft=false
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 ### 9. SOLICITAR RECUPERACIÓN DE CONTRASEÑA
 POST http://localhost:3000/api/recovery/request
@@ -228,14 +240,14 @@ Content-Type: application/json
 
 {
   "email": "usuario@example.com",
-  "code": "123456",
+  "code": "599189",
   "newPassword": "nuevacontraseña123"
 }
 
 ### 11. INVITAR A UN COMPAÑERO
 POST http://localhost:3000/api/invitations/invite
 Content-Type: application/json
-Authorization: Bearer ¿token?
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2UwNDkzZWNjZmViMDBhYmVkNDcxM2YiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQyNzUyMDYyLCJleHAiOjE3NDI3NTkyNjJ9.zn8uWAswbjuudmjx0BUspQ7prbx2lEtQ9biPd5J8boQ
 
 {
   "email": "companero@example.com"

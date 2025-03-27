@@ -1,53 +1,46 @@
-const {storageModel} = require('../models')
-const {uploadToPinata} = require('../utils/handleUploadIPFS')
+const { StorageModel } = require('../models/index');
+const path = require('path');
 
-const createItem = async(req, res) =>{
-    try {
-        const fileBuffer= req.file.buffer;
-        const fileName = req.file.originalname;
-        const pinataResponse = await uploadToPinata(fileBuffer, fileName);
-        // console.log('PINATA RESPONSE: ', pinataResponse)
+const createItem = async (req, res) => {
+    console.log("req.body:", req.body);
+    console.log("req.file:", req.file);
 
-        const ipfsFile = pinataResponse.IpfsHash;
-        const ipfs = `https://${process.env.PINATA_GATEWAY_URL}/ipfs/${ipfsFile}`;
-        const data = await storageModel.create({fileURL:ipfs});
-
-        res.send(data);
-    } catch (error) {
-        console.log(error);
-        res.status(500).send('ERROR_UPLOAD_COMPANY_IMAGE');
+    if (!req.file) {
+        return res.status(400).json({ error: "No se recibió ningún archivo" });
     }
-}
 
-// Nueva función para actualizar el logo
-const updateLogo = async(req, res) =>{
+    const data = await StorageModel.create({
+        fileName: req.file.originalname,
+        fileURL: `/storage/${req.file.filename}` // Ruta de almacenamiento
+    });
+
+    res.json({ data });
+};
+
+
+const updateLogo = async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).send('ERROR_NO_FILE_UPLOADED');
         }
 
-        const fileBuffer = req.file.buffer;
-        const fileName = req.file.originalname;
-        const pinataResponse = await uploadToPinata(fileBuffer, fileName);
+        const fileURL = `/storage/${req.file.filename}`; // Ruta local
 
-        const ipfsFile = pinataResponse.IpfsHash;
-        const ipfs = `https://${process.env.PINATA_GATEWAY_URL}/ipfs/${ipfsFile}`;
-        
-        // Para el logo, guardamos también el nombre del archivo
-        const data = await storageModel.create({
-            fileName: fileName,
-            fileURL: ipfs
+        // Guardar en la base de datos
+        const data = await StorageModel.create({
+            fileName: req.file.originalname,
+            fileURL
         });
 
         res.status(200).json({
             success: true,
             message: 'Logo updated successfully',
-            data: data
+            data
         });
     } catch (error) {
         console.log(error);
         res.status(500).send('ERROR_UPLOAD_LOGO');
     }
-}
+};
 
-module.exports = {createItem, updateLogo};
+module.exports = { createItem, updateLogo };

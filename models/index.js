@@ -1,5 +1,6 @@
 const models = {
     usersModel : require('./users'),
+    StorageModel : require('./storage'),
 
 }
 

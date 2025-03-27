@@ -1,6 +1,6 @@
 const {handleError} = require('../utils/handleError');
 const {verifyToken} = require('../utils/handleJwt');
-const { usersModel} = require('../models/index');
+const {usersModel} = require('../models');
 
 
 const authMiddleware = async(req, res, next) =>{

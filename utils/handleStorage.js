@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const uploadMiddleware = multer({storage:storage, limits: {fileSize: 5000}});
+const uploadMiddleware = multer({storage:storage, limits: {fileSize: 5 *1024*1024}});
 
 const memory = multer.memoryStorage();
 const uploadMiddlewareMemory= multer({storage:memory, limits:{fileSize: 5 *1024*1024}});

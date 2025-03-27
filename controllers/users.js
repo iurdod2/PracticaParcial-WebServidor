@@ -1,4 +1,4 @@
-const { usersModel } = require('../models');
+const { usersModel } = require('../models/index');
 const { handleError } = require('../utils/handleError');
 const { matchedData } = require('express-validator');
 

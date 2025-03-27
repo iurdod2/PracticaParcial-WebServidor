@@ -1,5 +1,5 @@
 const { matchedData } = require('express-validator');
-const { usersModel } = require('../models');
+const { usersModel } = require('../models/index');
 const { handleError } = require('../utils/handleError');
 const { encrypt } = require('../utils/handlePassword');
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const { matchedData } = require('express-validator');
 const { encrypt, compare } = require('../utils/handlePassword');
-const { usersModel } = require('../models');
+const { usersModel } = require('../models/index');
 const { tokenSign, verifyToken } = require('../utils/handleJwt');
 const { handleError } = require('../utils/handleError');
 
