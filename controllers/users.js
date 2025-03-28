@@ -62,17 +62,14 @@ const deleteUser = async (req, res) => {
 
 const getMe = async (req, res) => {
     try {
-        // Obtener el ID del usuario del token JWT
         const { _id } = req.user;
         
-        // Buscar el usuario en la base de datos
         const user = await usersModel.findById(_id);
         
         if (!user) {
             return res.status(404).send({ error: 'User not found' });
         }
         
-        // Eliminar campos sensibles
         user.set('password', undefined, {strict: false});
         user.set('verificationCode', undefined, {strict: false});
         

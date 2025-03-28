@@ -9,12 +9,12 @@ const {authMiddleware} = require('../middleware/session');
 
 //con el controlador
 router.get('/', getUsers);
+router.get('/me', authMiddleware, getMe);
 router.get('/:id', validatorGetItem, getUser);
 router.post('/',validatorCreateItem, createUser);
 router.put('/:id', authMiddleware, updateUser);
 router.put('/role/:id', authMiddleware, checkRole(['admin']), updateRole);
 router.delete('/:id', deleteUser);
-router.get('/me', authMiddleware, getMe);
 router.delete('/account', authMiddleware, deleteAccount);
 
 

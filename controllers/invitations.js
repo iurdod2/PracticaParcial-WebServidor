@@ -47,7 +47,7 @@ const inviteUser = async (req, res) => {
         res.status(200).send({ 
             message: 'Invitation sent',
             invitationCode, // Solo para pruebas, no haría esto en producción
-            invitationLink: `http://localhost:3000/register?code=${invitationCode}&email=${email}`
+            invitationLink: `http://localhost:3000/api/auth/register?code=${invitationCode}&email=${email}`
         });
     } catch (error) {
         console.log(error);
