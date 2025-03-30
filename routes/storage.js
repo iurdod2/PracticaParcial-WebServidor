@@ -18,7 +18,6 @@ router.post('/memory',
     createItem
 );
 
-// Nueva ruta para actualizar el logo
 router.patch('/logo', 
     authMiddleware,
     uploadMiddleware.single('image'),
