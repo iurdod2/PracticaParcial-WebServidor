@@ -98,7 +98,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "usuario@example.com",
+  "email": "pedperagu@gmail.com",
   "password": "contraseña12345"
 }
 
@@ -264,3 +264,88 @@ Content-Type: application/json
   "code": "smuxmtyp2a",  
   "password": "contraseña123"
 }
+
+### 13. CREAR UN NUEVO CLIENTE
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+{
+  "name": "Cliente Ejemplo2",
+  "email": "cliente@ejemplo2.com",
+  "phone": "600123452",
+  "contactPerson": "Juan Pérez",
+  "nif": "12345678Z",
+  "address": "Calle Falsa 123"
+}
+
+### 13.1 CREAR CLIENTE CON EMAIL DUPLICADO EN LA MISMA EMPRESA
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+{
+  "name": "Otro Cliente",
+  "email": "cliente@ejemplo.com",
+  "phone": "600654321"
+}
+
+### 13.2 CREAR CLIENTE CON DATOS INCOMPLETOS (FALTAN CAMPOS REQUERIDOS)
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+{
+  "name": "Cliente Incompleto"
+}
+
+### 14. OBTENER TODOS LOS CLIENTES DE LA EMPRESA
+GET http://localhost:3000/api/clients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+### 15. OBTENER UN CLIENTE ESPECÍFICO
+GET http://localhost:3000/api/clients/67efcc6966e431b89461070f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+### 15.1 OBTENER CLIENTE QUE NO EXISTE
+GET http://localhost:3000/api/clients/000000000000000000000000
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+### 16. ACTUALIZAR UN CLIENTE
+PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+{
+  "name": "Cliente Actualizado",
+  "email": "nuevoemail@ejemplo.com",
+  "phone": "600987654"
+}
+
+### 16.1 ACTUALIZAR CLIENTE CON EMAIL DUPLICADO
+PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+{
+  "email": "cliente2@ejemplo.com"
+}
+
+### 17. ARCHIVAR UN CLIENTE
+PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f/archive
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+### 18. OBTENER CLIENTES ARCHIVADOS
+GET http://localhost:3000/api/clients/archived/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+### 19. RESTAURAR UN CLIENTE ARCHIVADO
+PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f/restore
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+
+### 20. ELIMINAR PERMANENTEMENTE UN CLIENTE
+DELETE http://localhost:3000/api/clients/67efcc6966e431b89461070f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
