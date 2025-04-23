@@ -44,10 +44,10 @@ Content-Type: application/json
 }
 
 ### 2. VALIDACIÓN DE EMAIL
-### (Nota: Debes reemplazar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk con el token JWT recibido durante el registro)
+### (Nota: Debes reemplazar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w con el eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w JWT recibido durante el registro)
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "code": "269208"
@@ -55,13 +55,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 
 ### 2.0.1 Reenviar código de verificación
 POST http://localhost:3000/api/auth/resend-code
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 
 ### 2.1 Validación con código incorrecto
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "code": "000000"
@@ -70,22 +70,22 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 ### 2.2 Validación con código de formato incorrecto (menos de 6 dígitos)
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "code": "123"
 }
 
-### 2.3 Validación con token inválido o expirado
+### 2.3 Validación con eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w inválido o expirado
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
-Authorization: Bearer token_invalido_o_expirado
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w_invalido_o_expirado
 
 {
   "code": "123456"
 }
 
-### 2.4 Validación sin token
+### 2.4 Validación sin eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 PUT http://localhost:3000/api/auth/validation
 Content-Type: application/json
 
@@ -150,7 +150,7 @@ Content-Type: application/json
 ### 4. ONBOARDING - DATOS PERSONALES
 PUT http://localhost:3000/api/onboarding/personal
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "name": "Juan",
@@ -161,7 +161,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 ### 4.1 ONBOARDING - DATOS PERSONALES (formato incorrecto)
 PUT http://localhost:3000/api/onboarding/personal
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "name": "Juan",
@@ -183,7 +183,7 @@ Content-Type: image/jpeg
 
 ### Actualizar logo (PATCH)
 PATCH http://localhost:3000/api/storage/logo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 Content-Type: multipart/form-data; boundary=boundary123
 
 --boundary123
@@ -196,7 +196,7 @@ Content-Type: image/jpeg
 ### 5. ONBOARDING - DATOS DE COMPAÑÍA (empresa)
 PATCH http://localhost:3000/api/onboarding/company
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "companyName": "Empresa XYZ",
@@ -210,7 +210,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 ### 5.1 ONBOARDING - DATOS DE COMPAÑÍA (autónomo)
 PATCH http://localhost:3000/api/onboarding/company
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "address": "Calle Principal 123",
@@ -221,15 +221,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 
 ### 6. GET USUARIO ACTUAL
 GET http://localhost:3000/api/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 7. ELIMINAR CUENTA (SOFT DELETE)
 DELETE http://localhost:3000/api/users/account
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 8. ELIMINAR CUENTA (HARD DELETE)
 DELETE http://localhost:3000/api/users/account?soft=false
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 9. SOLICITAR RECUPERACIÓN DE CONTRASEÑA
 POST http://localhost:3000/api/recovery/request
@@ -252,7 +252,7 @@ Content-Type: application/json
 ### 11. INVITAR A UN COMPAÑERO
 POST http://localhost:3000/api/invitations/invite 
 Content-Type: application/json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 
 ### 12. ACEPTAR INVITACIÓN
@@ -268,21 +268,21 @@ Content-Type: application/json
 ### 13. CREAR UN NUEVO CLIENTE
 POST http://localhost:3000/api/clients
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
-  "name": "Cliente Ejemplo2",
-  "email": "cliente@ejemplo2.com",
-  "phone": "600123452",
-  "contactPerson": "Juan Pérez",
+  "name": "Cliente Ejemplo3",
+  "email": "cliente@ejemplo3.com",
+  "phone": "658123452",
+  "contactPerson": "Tema Luis",
   "nif": "12345678Z",
-  "address": "Calle Falsa 123"
+  "address": "Calle True 123"
 }
 
 ### 13.1 CREAR CLIENTE CON EMAIL DUPLICADO EN LA MISMA EMPRESA
 POST http://localhost:3000/api/clients
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "name": "Otro Cliente",
@@ -293,7 +293,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 ### 13.2 CREAR CLIENTE CON DATOS INCOMPLETOS (FALTAN CAMPOS REQUERIDOS)
 POST http://localhost:3000/api/clients
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "name": "Cliente Incompleto"
@@ -302,22 +302,22 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 ### 14. OBTENER TODOS LOS CLIENTES DE LA EMPRESA
 GET http://localhost:3000/api/clients
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 15. OBTENER UN CLIENTE ESPECÍFICO
 GET http://localhost:3000/api/clients/67efcc6966e431b89461070f
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 15.1 OBTENER CLIENTE QUE NO EXISTE
 GET http://localhost:3000/api/clients/000000000000000000000000
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 16. ACTUALIZAR UN CLIENTE
 PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "name": "Cliente Actualizado",
@@ -328,7 +328,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 ### 16.1 ACTUALIZAR CLIENTE CON EMAIL DUPLICADO
 PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 {
   "email": "cliente2@ejemplo.com"
@@ -336,16 +336,134 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjO
 
 ### 17. ARCHIVAR UN CLIENTE
 PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f/archive
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 18. OBTENER CLIENTES ARCHIVADOS
 GET http://localhost:3000/api/clients/archived/list
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 19. RESTAURAR UN CLIENTE ARCHIVADO
 PUT http://localhost:3000/api/clients/67efcc6966e431b89461070f/restore
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 20. ELIMINAR PERMANENTEMENTE UN CLIENTE
 DELETE http://localhost:3000/api/clients/67efcc6966e431b89461070f
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQzNzY1NDUwLCJleHAiOjE3NDM3NzI2NTB9.aGFjH0dgaK9YAuwtIAPNw13dhQRkdqOLgw9BXgozuUk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 21. CREAR UN NUEVO PROYECTO
+POST http://localhost:3000/api/projectss
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+{
+  "name": "Proyecto Web E-commerce",
+  "description": "Desarrollo de tienda online para el cliente",
+  "clientId": "68089ef95673345002ec9167",
+  "startDate": "2025-05-01T00:00:00.000Z",
+  "endDate": "2025-08-30T00:00:00.000Z",
+  "status": "pending"
+}
+
+### 22. CREAR PROYECTO CON OTRO CLIENTE
+POST http://localhost:3000/api/projects
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+{
+  "name": "Aplicación Móvil",
+  "description": "Desarrollo de app móvil para iOS y Android",
+  "clientId": "",
+  "startDate": "2025-06-01T00:00:00.000Z",
+  "endDate": "2025-10-30T00:00:00.000Z",
+  "status": "pending"
+}
+
+### 23. OBTENER TODOS LOS PROYECTOS
+GET http://localhost:3000/api/projects
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 24. OBTENER PROYECTOS FILTRADOS POR CLIENTE
+GET http://localhost:3000/api/projects?clientId=68089ef95673345002ec9167
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 25. OBTENER UN PROYECTO ESPECÍFICO
+GET http://localhost:3000/api/projects/68089f1c5673345002ec916c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 26. ACTUALIZAR UN PROYECTO
+PUT http://localhost:3000/api/projects/68089f1c5673345002ec916c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+{
+  "name": "Proyecto Web E-commerce (Actualizado)",
+  "description": "Desarrollo de tienda online avanzada para el cliente",
+  "clientId": "68089ef95673345002ec9167",
+  "status": "in-progress"
+}
+
+# ### 27. ACTUALIZAR UN PROYECTO (PATCH)
+# PATCH http://localhost:3000/api/projects/68089f1c5673345002ec916c
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+# {
+#   "status": "completed",
+#   "endDate": "2025-07-15T00:00:00.000Z"
+# }
+
+### 28. ARCHIVAR UN PROYECTO (SOFT DELETE)
+PUT http://localhost:3000/api/projects/68089f1c5673345002ec916c/archive
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 29. OBTENER PROYECTOS ARCHIVADOS
+GET http://localhost:3000/api/projects/archived/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 30. OBTENER PROYECTOS ARCHIVADOS DE UN CLIENTE ESPECÍFICO
+GET http://localhost:3000/api/projects/archived/list?clientId=
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 31. RESTAURAR UN PROYECTO ARCHIVADO
+PUT http://localhost:3000/api/projects/68089f1c5673345002ec916c/restore
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 32. ELIMINAR UN PROYECTO PERMANENTEMENTE (HARD DELETE)
+DELETE http://localhost:3000/api/projects/68089f1c5673345002ec916c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+### 33. INTENTO FALLIDO: CREAR PROYECTO CON CLIENTE INEXISTENTE
+POST http://localhost:3000/api/projects
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+{
+  "name": "Proyecto Inválido",
+  "description": "Este proyecto debe fallar porque el cliente no existe",
+  "clientId": "507f1f77bcf86cd799439011",
+  "status": "pending"
+}
+
+### 34. INTENTO FALLIDO: CREAR PROYECTO CON DATOS INCORRECTOS
+POST http://localhost:3000/api/projects
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+{
+  "description": "Este proyecto debe fallar porque falta el nombre y el clientId",
+  "status": "invalid-status"
+}
+
+### 35. INTENTO FALLIDO: CREAR PROYECTO CON FECHAS INVÁLIDAS
+POST http://localhost:3000/api/projects
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
+
+{
+  "name": "Proyecto con Fechas Incorrectas",
+  "description": "Este proyecto debe fallar porque la fecha de fin es anterior a la de inicio",
+  "clientId": "",
+  "startDate": "2025-10-01T00:00:00.000Z",
+  "endDate": "2025-05-30T00:00:00.000Z",
+  "status": "pending"
+}
