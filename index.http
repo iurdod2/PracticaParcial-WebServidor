@@ -421,7 +421,7 @@ GET http://localhost:3000/api/projects/archived/list
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 30. OBTENER PROYECTOS ARCHIVADOS DE UN CLIENTE ESPECÍFICO
-GET http://localhost:3000/api/projects/archived/list?clientId=
+GET http://localhost:3000/api/projects/archived/list?clientId=68089ef95673345002ec9167
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VmYmZjOWNkNjM2ZGM3ZDgxMTA5NmYiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNzQ1Mzk1MjU1LCJleHAiOjE3NDU0MDI0NTV9.CKL1b7HOI7xHRxF4N4ZLk8mkflQw4yzyXUANWiqjJ0w
 
 ### 31. RESTAURAR UN PROYECTO ARCHIVADO
