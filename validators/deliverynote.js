@@ -115,8 +115,59 @@ const validatorChangeDeliveryNoteStatus = [
     }
 ];
 
+const validatorAddGuestAccess = [
+    check("id")
+        .exists().withMessage("ID de albarán es requerido")
+        .notEmpty().withMessage("ID de albarán no puede estar vacío")
+        .isMongoId().withMessage("ID de albarán no válido"),
+    check("guestId")
+        .exists().withMessage("ID del invitado es requerido")
+        .notEmpty().withMessage("ID del invitado no puede estar vacío")
+        .isMongoId().withMessage("ID del invitado no válido"),
+    (req, res, next) => {
+        return validateResults(req, res, next)
+    }
+];
+
+// Validador para firmar un albarán
+const validatorSignDeliveryNote = [
+    check("id")
+        .exists().withMessage("ID de albarán es requerido")
+        .notEmpty().withMessage("ID de albarán no puede estar vacío")
+        .isMongoId().withMessage("ID de albarán no válido"),
+    check("signedBy")
+        .optional()
+        .isString().withMessage("El nombre del firmante debe ser texto"),
+    (req, res, next) => {
+        // Verificar que hay un archivo de firma
+        if (!req.file) {
+            return res.status(400).json({
+                errors: [{
+                    msg: "Se requiere una imagen de firma",
+                    param: "signature"
+                }]
+            });
+        }
+        
+        // Verificar que es una imagen
+        const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'];
+        if (!validTypes.includes(req.file.mimetype)) {
+            return res.status(400).json({
+                errors: [{
+                    msg: "El archivo debe ser una imagen (JPEG, PNG, GIF, SVG)",
+                    param: "signature"
+                }]
+            });
+        }
+        
+        return validateResults(req, res, next);
+    }
+];
+
 module.exports = { 
     validatorCreateDeliveryNote, 
     validatorGetDeliveryNote,
-    validatorChangeDeliveryNoteStatus
+    validatorChangeDeliveryNoteStatus,
+    validatorAddGuestAccess,
+    validatorSignDeliveryNote
 };

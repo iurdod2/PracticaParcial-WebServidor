@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { authMiddleware } = require('../middleware/session');
+const { uploadMiddlewareMemory } = require('../utils/handleStorage');
 const { 
     validatorCreateDeliveryNote, 
     validatorGetDeliveryNote,
@@ -15,6 +16,12 @@ const {
     deleteDeliveryNote,
     changeDeliveryNoteStatus
 } = require('../controllers/deliverynote');
+const { 
+    getDeliveryNotePdf, 
+    signDeliveryNote, 
+    addGuestAccess, 
+    safeDeleteDeliveryNote 
+} = require('../controllers/deliverynote-pdf');
 
 // Crear un albarán
 router.post('/', authMiddleware, validatorCreateDeliveryNote, createDeliveryNote);
@@ -33,5 +40,17 @@ router.delete('/:id', authMiddleware, validatorGetDeliveryNote, deleteDeliveryNo
 
 // Cambiar el estado de un albarán
 router.patch('/:id/status', authMiddleware, validatorChangeDeliveryNoteStatus, changeDeliveryNoteStatus);
+
+// Generar y descargar PDF
+router.get('/pdf/:id', authMiddleware, validatorGetDeliveryNote, getDeliveryNotePdf);
+
+// Firmar albarán
+router.post('/:id/sign', authMiddleware, validatorGetDeliveryNote, uploadMiddlewareMemory.single('signature'), signDeliveryNote);
+
+// Añadir acceso de invitado
+router.post('/:id/guest', authMiddleware, validatorGetDeliveryNote, addGuestAccess);
+
+// Eliminar albarán (solo si no está firmado)
+router.delete('/:id/safe', authMiddleware, validatorGetDeliveryNote, safeDeleteDeliveryNote);
 
 module.exports = router;

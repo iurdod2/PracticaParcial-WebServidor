@@ -70,7 +70,8 @@ const DeliveryNoteSchema = new mongoose.Schema(
         description: {
             type: String
         },
-        // El albarán puede contener horas, materiales, o ambos
+        // El albarán puede contener horas, materiales, o AMBOS
+        // he incluido que pueda contener ambos pero porque me parecía más sencillo
         hoursEntries: [HoursEntrySchema],
         materialEntries: [MaterialEntrySchema],
         // Campo para saber si es un albarán simple (una sola entrada) o múltiple
@@ -87,7 +88,40 @@ const DeliveryNoteSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'users',
             required: true
-        }
+        },
+        signature: {
+            isSigned: {
+                type: Boolean,
+                default: false
+            },
+            date: {
+                type: Date
+            },
+            signedBy: {
+                type: String
+            },
+            ipfsHash: {
+                type: String
+            },
+            imageUrl: {
+                type: String
+            }
+        },
+        pdf: {
+            ipfsHash: {
+                type: String
+            },
+            url: {
+                type: String
+            },
+            generatedAt: {
+                type: Date
+            }
+        },
+        guestAccess: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'users'
+        }]
     },
     {
         timestamps: true,
