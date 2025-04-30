@@ -143,6 +143,7 @@ const deleteAccount = async (req, res) => {
         // Obtener el parámetro de consulta soft (borrado lógico o físico)
         const softDelete = req.query.soft !== 'false';
         
+        // Esto habría que hacerlo con mongoose-delete para que no aparezca cuando hago un find
         if (softDelete) {
             // Soft delete: marcar al usuario como inactivo
             await usersModel.findByIdAndUpdate(_id, { active: false });

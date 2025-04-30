@@ -17,7 +17,7 @@ const register = async(req, res) => {
         req = matchedData(req);
         
         // Verificar si ya existe un usuario con ese email y está verificado
-        const existingUser = await usersModel.findOne({ email: req.email, verified: true });
+        const existingUser = await usersModel.findOne({ email: req.email });
         if (existingUser) {
             return res.status(409).send({ error: 'El email ya existe y está verificado' });
         }
