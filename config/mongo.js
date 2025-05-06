@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const dbConnect = () => {
     // cambiar el operador ternario cuando vaya a hacer los test
-    const db_uri = process.env.NODE_ENV === 'test' ? process.env.DB_URI:process.env.DB_URI_TEST
+    const db_uri = process.env.NODE_ENV === 'test' ? process.env.DB_URI_TEST:process.env.DB_URI
     mongoose.set('strictQuery', false)
     mongoose.connect(db_uri)
 }
